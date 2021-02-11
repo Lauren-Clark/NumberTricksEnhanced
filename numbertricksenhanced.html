@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Number Tricks</title>
+
+		<style>
+		body  {	 border: 3px solid rgb(75,75,75);
+ 				 box-shadow: 0 0 15px 5px rgba(44,82,100,.75);
+ 				 max-width: 760px;
+ 				 margin-top: 50px;
+ 				 margin-left: auto;
+ 				 margin-right: auto;
+ 				 padding: 15px;
+ 				}
+	</style>
+
+
+	<script>
+
+		/* Name: Lauren Clark
+		Date: February 4 2021
+
+		Goal 
+		Have user enter a number, preform calculations on the input number involving a series of arthematic formulas and variables
+		and have the final answer come out to 7*/
+
+		/*Algorithm
+		Script 1:
+		1. Create variable to represent the entry for the first prompt
+		2. Create prompt that asks user to give a number and set that entry to new variable
+		4. Create variables that represent each arthimetic forumla needed, starting with startingNumber
+		5. I used different variables instead of re-assigning startingNumber over and over
+		6. The final answer is determined as the sixth's number's calculation
+		
+		Script 2 (in body)
+		7. I use document.write to have JS write the header
+		8. Then I used document.write to have JS write out the arthimetic operations happening with the variables
+		that were defined in Script 1. These strings are added together using cocatanation 
+		9. The alert actually comes up after the beginning prompt, and displays the final answer - closes out and everything
+		in Script 2 is displayed 
+
+		 */
+		
+		//Create prompt for number input, turn into integer and set to 'startingNumber'
+		
+		//entry = prompt("Enter a whole number");			
+		
+		var entry;			//defines 'entry' as variable
+
+
+		do {
+			entry = prompt("Enter a whole number");
+			entry = parseInt(entry);
+			var startingNumber = entry;	
+			if (isNaN(entry) ) {
+				alert("Must be a whole number.");
+			}
+		}
+		while ( isNaN(entry) );
+
+
+		//ATTEMPTING ISN'T FULLY CORRECT
+		//if ( isNaN(entry) || entry <= 0 ) {
+		//	alert ("Must be a whole number.");
+		//} else if ( isNaN(entry) > 1 ) {
+		//	alert("Final number is" + finalAnswer)
+		//}
+		//else ( isNaN(entry) || entry <=0 ) {
+		//	entry = prompt("Please enter a whole number.");
+		//}
+		
+
+		//if(typeof startingNumber == 'integer'){
+		//	document.write(startingNumber + " is a number <br/>");
+		//}else {
+		//	document.write(startingNumber + " please enter a whole number <br/> ");
+		//}
+
+
+		newNumber = startingNumber + 9;
+		thirdNumber = newNumber*2;
+		fourthNumber = thirdNumber-4;
+		fifthNumber = fourthNumber/2;
+		sixthNumber = fifthNumber-startingNumber;
+		finalAnswer = sixthNumber;
+
+	</script>
+
+
+</head>
+
+<!-- -->
+<body>
+		<script>
+			document.write("<h1>Number Tricks</h1>");
+			document.write("<ul> <li>I added 9 to " + startingNumber + ". " +
+				"The new number is " + newNumber + ". <br> </li>" +
+				"<li>I multipled " + newNumber + " by 2. " + "The new number is " + thirdNumber + ".<br> </li>" +
+
+				"<li>I subtracted 4 from " + thirdNumber + ". " + "The new number is " + fourthNumber +". <br> </li>" +
+
+				"<li>I divided " + fourthNumber + " by two. " + " The new number is " + fifthNumber + ". <br></li>" +
+
+				"<li>I subtracted your original number of " + startingNumber + " from " + fifthNumber + ".<br> " + "<br></li></ul>" +
+
+				"<b> Your final number is " + sixthNumber + "! </b> <br><br>");
+
+			"<br><br>" ;
+
+
+			alert("Final number is " + sixthNumber + "!");
+
+		</script>
+		<h2>Thanks for playing. <a href="javascript:location.reload(true)">Play again?</a> </h2>
+
+</body>
+</html>
